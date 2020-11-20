@@ -18,3 +18,5 @@ sed -i "/set network.\$1.netmask='\$netm'/a\ \t\t\t\tset network.\$1.delegate='0
 sed -i "/set network.\$1.netmask='\$netm'/a\ \t\t\t\tset network.\$1.gateway='192.168.251.10'" package/base-files/files/bin/config_generate
 
 # Turn off DHCP Server
+sed -i 's/start/ignore/' package/network/services/dnsmasq/files/dhcp.conf
+sed -i 's/100/1/' package/network/services/dnsmasq/files/dhcp.conf
